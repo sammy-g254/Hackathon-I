@@ -31,6 +31,7 @@ class CustomerDeleteView(DeleteView):
 
 
 # BOOKING VIEWS
+
 class BookingListView(ListView):
     model = Booking
     template_name = 'booking_list.html'
@@ -55,6 +56,7 @@ class BookingDeleteView(DeleteView):
     model = Booking
     template_name = 'booking_confirm_delete.html'
     success_url = reverse_lazy('booking_list')
+
 
 
 # VEHICLE VIEWS

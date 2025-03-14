@@ -6,15 +6,15 @@ class CustomerForm(forms.ModelForm):
         model = Customer
         fields = ['name', 'contact_info', 'location']
 
-class BookingForm(forms.ModelForm):
-    class Meta:
-        model = Booking
-        fields = ['customer', 'service_date', 'destination']
-
 class VehicleForm(forms.ModelForm):
     class Meta:
         model = Vehicle
-        fields = ['name', 'capacity', 'available']
+        fields = ['name', 'number_plate', 'capacity', 'available']
+
+class BookingForm(forms.ModelForm):
+    class Meta:
+        model = Booking
+        fields = ['customer', 'vehicle', 'service_date', 'return_date']
 
 class PaymentForm(forms.ModelForm):
     class Meta:

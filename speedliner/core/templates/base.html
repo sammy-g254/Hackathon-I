@@ -5,27 +5,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SPEEDLINER - FAST, SAFE, SECURE</title>
+  
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicons/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicons/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicons/favicon-16x16.png' %}">
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicons/favicon.ico' %}">
+  <link rel="manifest" href="{% static 'img/favicons/manifest.json' %}">
+  <meta name="msapplication-TileImage" content="{% static 'img/favicons/mstile-150x150.png' %}">
+  <meta name="theme-color" content="#ffffff">
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-  <!-- Rhea Template CSS (custom styles) -->
-  <link rel="stylesheet" href="{% static 'css/rhea-style.css' %}">
-  <!-- Additional CSS files if needed -->
+  <!-- Rhea Template CSS -->
+  <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/plyr/plyr.css' %}">
 </head>
 <body>
   <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg fixed-top py-3 backdrop" data-navbar-on-scroll="data-navbar-on-scroll">
     <div class="container">
-      <a class="navbar-brand" href="/">
-        <!-- Logo image if available -->
-        <img src="{% static 'images/logo.png' %}" alt="SPEEDLINER Logo" style="height:40px;">
-        SPEEDLINER
+      <a class="navbar-brand d-flex align-items-center fw-bold fs-2" href="/">
+        <img class="d-inline-block align-top img-fluid" src="{% static 'img/gallery/logo-icon.png' %}" alt="" width="50" />
+        <span class="text-primary fs-4 ps-2">SPEEDLINER</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+      <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarNav">
+        <ul class="navbar-nav ms-auto pt-2 pt-lg-0">
           <li class="nav-item"><a class="nav-link" href="{% url 'customer_list' %}">Customers</a></li>
           <li class="nav-item"><a class="nav-link" href="{% url 'booking_list' %}">Bookings</a></li>
           <li class="nav-item"><a class="nav-link" href="{% url 'vehicle_list' %}">Vehicles</a></li>
@@ -36,10 +44,10 @@
   </nav>
 
   <!-- Main Content -->
-  <div class="container my-4">
+  <main class="main container my-5" id="top">
     {% block content %}
     {% endblock %}
-  </div>
+  </main>
 
   <!-- Footer -->
   <footer class="footer bg-light py-3">
@@ -48,9 +56,13 @@
     </div>
   </footer>
 
-  <!-- jQuery and Bootstrap JS -->
+  <!-- JavaScript Files -->
   <script src="{% static 'js/jquery.min.js' %}"></script>
-  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-  <!-- Additional JavaScript files if needed -->
+  <script src="{% static 'vendors/@popperjs/popper.min.js' %}"></script>
+  <script src="{% static 'vendors/bootstrap/bootstrap.min.js' %}"></script>
+  <script src="{% static 'vendors/is/is.min.js' %}"></script>
+  <script src="{% static 'vendors/plyr/plyr.polyfilled.min.js' %}"></script>
+  <script src="{% static 'js/theme.js' %}"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
 </body>
 </html>
